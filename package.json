@@ -1,0 +1,15 @@
+{
+  "name": "fynni-landing",
+  "version": "1.0.0",
+  "description": "fynni - Finance, simplified. Landing page",
+  "scripts": {
+    "build:css": "npx tailwindcss -i ./src/input.css -o ./css/style.css --minify",
+    "watch:css": "npx tailwindcss -i ./src/input.css -o ./css/style.css --watch",
+    "build": "npm run build:css",
+    "validate": "npx html-validate index.html"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0",
+    "html-validate": "^8.0.0"
+  }
+}

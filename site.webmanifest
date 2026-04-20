@@ -1,0 +1,26 @@
+{
+  "name": "fynni - Finance, simplified",
+  "short_name": "fynni",
+  "description": "Track pengeluaran, dapatkan insight instan dalam ≤3 detik, dan rekomendasi budget otomatis",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0F0F12",
+  "theme_color": "#0F0F12",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["finance", "productivity"],
+  "lang": "id-ID"
+}
