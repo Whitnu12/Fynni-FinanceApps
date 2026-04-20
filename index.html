@@ -8,9 +8,9 @@
   <meta name="author" content="fynni">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#0F0F12">
-  
+
   <title>fynni - Finance, simplified.</title>
-  
+
   <!-- Open Graph -->
   <meta property="og:title" content="fynni - Finance, simplified.">
   <meta property="og:description" content="Ubah jadi tabungan. Track, clear, instant insight dalam 3 detik. 100% Gratis.">
@@ -25,16 +25,16 @@
   <meta name="twitter:title" content="fynni - Finance, simplified.">
   <meta name="twitter:description" content="Ubah jadi tabungan. Track, clear, instant insight dalam 3 detik. 100% Gratis.">
   <meta name="twitter:image" content="https://fynni.app/og-image.jpg">
-  
+
   <!-- Favicon & PWA -->
   <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
   <link rel="apple-touch-icon" href="/images/icon-192.png">
   <link rel="manifest" href="/site.webmanifest">
-  
+
   <!-- Preload Critical Resources -->
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" as="style">
   <link rel="preload" href="/css/style.css" as="style">
-  
+
   <!-- Security Headers (for GitHub Pages) -->
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com;">
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
@@ -44,7 +44,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-  
+
   <!-- Tailwind CSS (Production Build) -->
   <link rel="stylesheet" href="/css/style.css">
   <script type="application/ld+json">
@@ -142,8 +142,8 @@
           </div>
         </div>
 
-        <div class="hidden md:flex justify-center items-center fade-up" style="transition-delay: 0.1s;">
-          <div class="mockup-device w-full max-w-[320px] p-4 flex flex-col">
+        <div class="hidden md:flex justify-center items-center fade-up" data-transition-delay="0.1s;">
+          <div class="mockup-device w-full max-w-[320px] p-4 flex flex-col" role="img" aria-label="fynni mobile app interface showing balance, expense tracking, and weekly trends">
             <div class="mockup-notch mb-4"></div>
             <div class="flex-1 flex flex-col gap-4 overflow-hidden px-1">
               <div class="flex justify-between items-center mb-2">
@@ -161,7 +161,7 @@
                   <span class="text-xs font-display text-primary bg-primary/10 px-2 py-0.5 rounded">-12%</span>
                 </div>
                 <div class="h-2.5 bg-dark-bg rounded-full overflow-hidden">
-                  <div class="h-full bg-primary w-[65%] rounded-full bar-fill" style="width: 65%"></div>
+                  <div class="h-full bg-primary w-[65%] rounded-full bar-fill" data-width="65""></div>
                 </div>
                 <div class="flex justify-between mt-2 text-xs text-text-muted font-display">
                   <span>Rp 4.2 Jt</span><span>Rp 6.5 Jt</span>
@@ -186,15 +186,15 @@
               <div class="mt-2 bg-dark-card rounded-xl p-4 border border-dark-border flex-1 flex flex-col">
                 <div class="text-xs text-text-secondary mb-3 font-medium">Tren Mingguan</div>
                 <div class="flex items-end gap-2 h-20 mb-2">
-                  <div class="w-full bg-primary/20 rounded-t-sm hover:bg-primary/40 transition-colors cursor-pointer" style="height: 40%"></div>
-                  <div class="w-full bg-primary/40 rounded-t-sm hover:bg-primary/60 transition-colors cursor-pointer" style="height: 60%"></div>
-                  <div class="w-full bg-primary/30 rounded-t-sm hover:bg-primary/50 transition-colors cursor-pointer" style="height: 30%"></div>
-                  <div class="w-full bg-primary rounded-t-sm cursor-pointer relative group" style="height: 85%">
+                  <div class="w-full bg-primary/20 rounded-t-sm hover:bg-primary/40 transition-colors cursor-pointer" data-height="40""></div>
+                  <div class="w-full bg-primary/40 rounded-t-sm hover:bg-primary/60 transition-colors cursor-pointer" data-height="60""></div>
+                  <div class="w-full bg-primary/30 rounded-t-sm hover:bg-primary/50 transition-colors cursor-pointer" data-height="30""></div>
+                  <div class="w-full bg-primary rounded-t-sm cursor-pointer relative group" data-height="85"">
                     <div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-dark-bg border border-dark-border text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Rp 450K</div>
                   </div>
-                  <div class="w-full bg-primary/50 rounded-t-sm hover:bg-primary/70 transition-colors cursor-pointer" style="height: 55%"></div>
-                  <div class="w-full bg-primary/20 rounded-t-sm hover:bg-primary/40 transition-colors cursor-pointer" style="height: 20%"></div>
-                  <div class="w-full bg-primary/60 rounded-t-sm hover:bg-primary/80 transition-colors cursor-pointer" style="height: 45%"></div>
+                  <div class="w-full bg-primary/50 rounded-t-sm hover:bg-primary/70 transition-colors cursor-pointer" data-height="55""></div>
+                  <div class="w-full bg-primary/20 rounded-t-sm hover:bg-primary/40 transition-colors cursor-pointer" data-height="20""></div>
+                  <div class="w-full bg-primary/60 rounded-t-sm hover:bg-primary/80 transition-colors cursor-pointer" data-height="45""></div>
                 </div>
                 <div class="flex justify-between text-[10px] text-text-muted mt-1 font-display">
                   <span>Sel</span><span>Rab</span><span>Kam</span><span>Jum</span><span>Sab</span><span>Min</span><span>Sen</span>
@@ -311,14 +311,14 @@
             <h3 class="text-lg font-semibold mb-2 text-white group-hover:text-primary transition-colors">Insight 3 Detik</h3>
             <p class="text-text-secondary leading-relaxed">Buka aplikasi, langsung tahu kondisi keuangan. Tanpa loading lama, tanpa rumus rumit.</p>
           </article>
-          <article class="bg-dark-card border border-dark-border rounded-xl p-6 md:p-8 hover:border-primary/50 hover:-translate-y-1 transition-all duration-200 focus-within:border-primary group fade-up" style="transition-delay: 0.1s;">
+          <article class="bg-dark-card border border-dark-border rounded-xl p-6 md:p-8 hover:border-primary/50 hover:-translate-y-1 transition-all duration-200 focus-within:border-primary group fade-up" data-transition-delay="0.1s;">
             <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-5 text-primary">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"></path><path d="M18 20V4"></path><path d="M6 20v-4"></path></svg>
             </div>
             <h3 class="text-lg font-semibold mb-2 text-white group-hover:text-primary transition-colors">Rekomendasi Otomatis</h3>
             <p class="text-text-secondary leading-relaxed">AI menganalisis pola belanja dan menyarankan batasan budget yang realistis untukmu.</p>
           </article>
-          <article class="bg-dark-card border border-dark-border rounded-xl p-6 md:p-8 hover:border-primary/50 hover:-translate-y-1 transition-all duration-200 focus-within:border-primary group fade-up" style="transition-delay: 0.2s;">
+          <article class="bg-dark-card border border-dark-border rounded-xl p-6 md:p-8 hover:border-primary/50 hover:-translate-y-1 transition-all duration-200 focus-within:border-primary group fade-up" data-transition-delay="0.2s;">
             <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-5 text-primary">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
             </div>
@@ -338,7 +338,7 @@
         <p class="text-text-secondary text-center max-w-[540px] mx-auto mb-16 fade-up">
           3 langkah simpel. Kamu input, sistem yang mikir.
         </p>
-        
+
         <div class="grid md:grid-cols-3 gap-8 md:gap-12 max-w-[900px] mx-auto fade-up">
           <!-- Step 1 -->
           <div class="text-center step-connector">
@@ -349,7 +349,7 @@
             <h3 class="text-lg font-semibold text-white mb-3">Input Transaksi</h3>
             <p class="text-text-secondary text-sm leading-relaxed">Catat pengeluaranmu sesering mungkin. Cukup 30 detik per transaksi. Sistem otomatis kategorikan.</p>
           </div>
-          
+
           <!-- Step 2 -->
           <div class="text-center step-connector">
             <div class="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mx-auto mb-6 text-primary">
@@ -359,7 +359,7 @@
             <h3 class="text-lg font-semibold text-white mb-3">Sistem Analisis</h3>
             <p class="text-text-secondary text-sm leading-relaxed">AI menganalisis pola pengeluaran, membandingkan dengan panduan keuangan profesional, dan menghitung optimal budget.</p>
           </div>
-          
+
           <!-- Step 3 -->
           <div class="text-center">
             <div class="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mx-auto mb-6 text-primary">
@@ -379,7 +379,7 @@
         <h2 id="social-proof-heading" class="text-[clamp(1.5rem,4vw,2rem)] font-semibold text-center mb-12 tracking-tight fade-up">
           Dipercaya ribuan profesional
         </h2>
-        
+
         <!-- <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 text-center max-w-[900px] mx-auto fade-up">
           <div class="p-6">
             <div class="text-4xl md:text-5xl font-display font-bold text-primary mb-2 tracking-tight">500+</div>
@@ -395,7 +395,7 @@
           </div>
         </div> -->
 
-        <div class="grid md:grid-cols-2 gap-6 max-w-[900px] mx-auto fade-up" style="transition-delay: 0.1s;">
+        <div class="grid md:grid-cols-2 gap-6 max-w-[900px] mx-auto fade-up" data-transition-delay="0.1s;">
           <blockquote class="bg-dark-card p-6 rounded-xl border-l-4 border-primary shadow-sm">
             <p class="text-white italic mb-4 leading-relaxed">"Gila sih, baru 2 minggu pakai fynni udah bisa clear pengeluaran kafe. Otak langsung nalar harus hemat di mana."</p>
             <footer class="text-text-secondary text-sm font-medium">— Andi, Marketing Manager (28)</footer>
@@ -414,11 +414,11 @@
         <h2 id="faq-heading" class="text-[clamp(1.5rem,4vw,2rem)] font-semibold text-center mb-12 tracking-tight fade-up">
           Pertanyaan yang sering ditanya
         </h2>
-        
-        <div class="space-y-3 fade-up" role="list">
+
+        <div class="space-y-3">
           <!-- FAQ 1 -->
-          <div class="border border-dark-border rounded-xl bg-dark-bg overflow-hidden" role="listitem">
-            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left min-h-[56px] hover:bg-dark-card/30 transition-colors" aria-expanded="false" onclick="toggleFaq(this)">
+          <div class="border border-dark-border rounded-xl bg-dark-bg overflow-hidden">
+            <button type="button" class="faq-toggle w-full flex items-center justify-between p-5 text-left min-h-[56px] hover:bg-dark-card/30 transition-colors" aria-expanded="false" aria-controls="faq-answer-1" onclick="toggleFaq(this)">
               <span class="text-white font-medium text-sm pr-4">Benar-benar gratis? Nggak ada hidden cost?</span>
               <svg class="faq-chevron w-5 h-5 text-text-muted flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </button>
@@ -426,10 +426,10 @@
               <p class="text-text-secondary text-sm leading-relaxed pb-5">Ya, 100% gratis. Saat ini fynni dalam fase testing dengan user terbatas. Semua fitur inti bisa kamu pakai tanpa bayar sepeser pun. Kami transparan — kalau nanti ada perubahan model, kamu akan diinformasikan jauh-jauh hari.</p>
             </div>
           </div>
-          
+
           <!-- FAQ 2 -->
-          <div class="border border-dark-border rounded-xl bg-dark-bg overflow-hidden" role="listitem">
-            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left min-h-[56px] hover:bg-dark-card/30 transition-colors" aria-expanded="false" onclick="toggleFaq(this)">
+          <div class="border border-dark-border rounded-xl bg-dark-bg overflow-hidden">
+            <button type="button" class="faq-toggle w-full flex items-center justify-between p-5 text-left min-h-[56px] hover:bg-dark-card/30 transition-colors" aria-expanded="false" aria-controls="faq-answer-2" onclick="toggleFaq(this)">
               <span class="text-white font-medium text-sm pr-4">Aman nggak data keuangan saya?</span>
               <svg class="faq-chevron w-5 h-5 text-text-muted flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </button>
@@ -437,10 +437,10 @@
               <p class="text-text-secondary text-sm leading-relaxed pb-5">Sangat aman. Data dienkripsi end-to-end dan hanya tersimpan di device kamu. Kami tidak menjual data keuangan ke pihak ketiga. Keamanan adalah prioritas utama dalam desain fynni.</p>
             </div>
           </div>
-          
+
           <!-- FAQ 3 -->
-          <div class="border border-dark-border rounded-xl bg-dark-bg overflow-hidden" role="listitem">
-            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left min-h-[56px] hover:bg-dark-card/30 transition-colors" aria-expanded="false" onclick="toggleFaq(this)">
+          <div class="border border-dark-border rounded-xl bg-dark-bg overflow-hidden">
+            <button type="button" class="faq-toggle w-full flex items-center justify-between p-5 text-left min-h-[56px] hover:bg-dark-card/30 transition-colors" aria-expanded="false" aria-controls="faq-answer-3" onclick="toggleFaq(this)">
               <span class="text-white font-medium text-sm pr-4">Ribet nggak setup awalnya?</span>
               <svg class="faq-chevron w-5 h-5 text-text-muted flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </button>
@@ -448,10 +448,10 @@
               <p class="text-text-secondary text-sm leading-relaxed pb-5">Nggak. Setup kurang dari 2 menit. Cukup download, buat akun, dan mulai input transaksi pertama. Nggak perlu hubungkan ke bank atau e-wallet — cukup catat manual, sistem yang bantu analisanya.</p>
             </div>
           </div>
-          
+
           <!-- FAQ 4 -->
-          <div class="border border-dark-border rounded-xl bg-dark-bg overflow-hidden" role="listitem">
-            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left min-h-[56px] hover:bg-dark-card/30 transition-colors" aria-expanded="false" onclick="toggleFaq(this)">
+          <div class="border border-dark-border rounded-xl bg-dark-bg overflow-hidden">
+            <button type="button" class="faq-toggle w-full flex items-center justify-between p-5 text-left min-h-[56px] hover:bg-dark-card/30 transition-colors" aria-expanded="false" aria-controls="faq-answer-4" onclick="toggleFaq(this)">
               <span class="text-white font-medium text-sm pr-4">Bisa sinkron dengan bank atau e-wallet?</span>
               <svg class="faq-chevron w-5 h-5 text-text-muted flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </button>
@@ -459,10 +459,10 @@
               <p class="text-text-secondary text-sm leading-relaxed pb-5">Saat ini fynni fokus pada input manual untuk kecepatan dan keamanan maksimal. Integrasi otomatis dengan bank/e-wallet ada di roadmap pengembangan. Tapi dengan input manual, kamu tetap dapat insight instan dan rekomendasi budget.</p>
             </div>
           </div>
-          
+
           <!-- FAQ 5 -->
-          <div class="border border-dark-border rounded-xl bg-dark-bg overflow-hidden" role="listitem">
-            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left min-h-[56px] hover:bg-dark-card/30 transition-colors" aria-expanded="false" onclick="toggleFaq(this)">
+          <div class="border border-dark-border rounded-xl bg-dark-bg overflow-hidden">
+            <button type="button" class="faq-toggle w-full flex items-center justify-between p-5 text-left min-h-[56px] hover:bg-dark-card/30 transition-colors" aria-expanded="false" aria-controls="faq-answer-5" onclick="toggleFaq(this)">
               <span class="text-white font-medium text-sm pr-4">Apa bedanya fynni dengan budget tracker lain?</span>
               <svg class="faq-chevron w-5 h-5 text-text-muted flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </button>
@@ -470,15 +470,15 @@
               <p class="text-text-secondary text-sm leading-relaxed pb-5">fynni punya speed-to-insight ≤3 detik, UI dark-first yang mudah dibaca, dan rekomendasi budget yang didukung panduan keuangan profesional. Kamu nggak perlu pusing ngatur — cukup input rajin, sistem yang kasih tau harus ngapain. Plus, 100% gratis.</p>
             </div>
           </div>
-          
+
           <!-- FAQ 6 -->
-          <div class="border border-dark-border rounded-xl bg-dark-bg overflow-hidden" role="listitem">
-            <button class="faq-toggle w-full flex items-center justify-between p-5 text-left min-h-[56px] hover:bg-dark-card/30 transition-colors" aria-expanded="false" onclick="toggleFaq(this)">
+          <div class="border border-dark-border rounded-xl bg-dark-bg overflow-hidden">
+            <button type="button" class="faq-toggle w-full flex items-center justify-between p-5 text-left min-h-[56px] hover:bg-dark-card/30 transition-colors" aria-expanded="false" aria-controls="faq-answer-6" onclick="toggleFaq(this)">
               <span class="text-white font-medium text-sm pr-4">Bisa pakai di web atau hanya mobile?</span>
               <svg class="faq-chevron w-5 h-5 text-text-muted flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </button>
             <div class="faq-answer px-5" role="region">
-              <p class="text-text-secondary text-sm leading-relaxed pb-5">Saat ini fynni dioptimalkan untuk mobile (iOS & Android) karena kebanyakan user track keuangan on-the-go. Versi web sedang dalam pengembangan dan akan rilis untuk testing user.</p>
+              <p class="text-text-secondary text-sm leading-relaxed pb-5">Saat ini fynni dioptimalkan untuk mobile (iOS &amp; Android) karena kebanyakan user track keuangan on-the-go. Versi web sedang dalam pengembangan dan akan rilis untuk testing user.</p>
             </div>
           </div>
         </div>
@@ -501,7 +501,7 @@
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="https://drive.google.com/file/d/19uqzMLWnS2jKDcbJ98RBnaEfMGnhL9pm/view" target="_blank" class="bg-white text-primary font-semibold px-8 py-3.5 rounded-lg hover:bg-gray-100 active:bg-gray-200 transition-all duration-150 min-h-[48px] flex items-center justify-center shadow-lg" onclick="trackEvent('cta_primary_click')">
-            Download fynni 
+            Download fynni
           </a>
           <a href="#benefits" class="bg-transparent border-2 border-white/30 text-white font-medium px-8 py-3.5 rounded-lg hover:border-white hover:bg-white/10 transition-all duration-150 min-h-[48px] flex items-center justify-center">
             Pelajari lebih lanjut
@@ -643,7 +643,7 @@
       const answer = button.nextElementSibling;
       const chevron = button.querySelector('.faq-chevron');
       const isExpanded = button.getAttribute('aria-expanded') === 'true';
-      
+
       // Close all other FAQs
       document.querySelectorAll('.faq-toggle').forEach(btn => {
         if (btn !== button) {
@@ -652,7 +652,7 @@
           btn.querySelector('.faq-chevron').classList.remove('rotated');
         }
       });
-      
+
       // Toggle current
       button.setAttribute('aria-expanded', !isExpanded);
       answer.classList.toggle('open');
