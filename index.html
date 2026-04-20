@@ -20,33 +20,130 @@
   <meta property="og:locale" content="id_ID">
   <link rel="canonical" href="https://fynni.app">
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="fynni - Finance, simplified.">
-  <meta name="twitter:description" content="Ubah jadi tabungan. Track, clear, instant insight dalam 3 detik. 100% Gratis.">
-  <meta name="twitter:image" content="https://fynni.app/og-image.jpg">
-  
-  <!-- Favicon & PWA -->
-  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
-  <link rel="apple-touch-icon" href="/images/icon-192.png">
-  <link rel="manifest" href="/site.webmanifest">
-  
-  <!-- Preload Critical Resources -->
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" as="style">
-  <link rel="preload" href="/css/style.css" as="style">
-  
-  <!-- Security Headers (for GitHub Pages) -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com;">
-  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-  <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
-
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
   
-  <!-- Tailwind CSS (Production Build) -->
-  <link rel="stylesheet" href="/css/style.css">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            dark: { bg: '#0F0F12', card: '#1C1C1E', border: '#2C2C2E', input: '#2C2C2E' },
+            primary: { DEFAULT: '#6A5AE0', hover: '#7B6EE9', active: '#4B3DB2' },
+            text: { primary: '#FFFFFF', secondary: '#F2F2F7', muted: '#E5E5EA' }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Space Grotesk', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root { --focus-ring: 0 0 0 3px rgba(106, 90, 224, 0.25); }
+    body { background-color: #0F0F12; color: #FFFFFF; font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
+    :focus-visible { outline: none; box-shadow: var(--focus-ring); border-radius: 8px; }
+    .skip-link { position: absolute; top: -50px; left: 0; background: #6A5AE0; color: white; padding: 8px 16px; z-index: 100; transition: top 0.2s; }
+    .skip-link:focus { top: 0; }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } }
+    
+    .mockup-device { background: #121214; border: 1px solid #2C2C2E; border-radius: 28px; overflow: hidden; box-shadow: 0 24px 48px rgba(0,0,0,0.45); aspect-ratio: 9/16; max-height: 640px; position: relative; }
+    .mockup-notch { width: 90px; height: 20px; background: #1C1C1E; border-radius: 0 0 16px 16px; margin: 0 auto; position: relative; z-index: 10; }
+    .bar-fill { transition: width 1s cubic-bezier(0.4, 0, 0.2, 1); }
+    
+    #cookie-banner { transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s; }
+    .cookie-hidden { transform: translateY(100%); opacity: 0; pointer-events: none; }
+    
+    .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    
+    /* FAQ Accordion */
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), padding 0.35s cubic-bezier(0.16, 1, 0.3, 1); }
+    .faq-answer.open { max-height: 300px; }
+    .faq-chevron { transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+    .faq-chevron.rotated { transform: rotate(180deg); }
+    
+    /* Step Connector Line */
+    .step-connector { position: relative; }
+    .step-connector::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: -24px;
+      width: 48px;
+      height: 2px;
+      background: linear-gradient(90deg, #6A5AE0, #2C2C2E);
+    }
+    @media (max-width: 767px) {
+      .step-connector::after {
+        top: auto;
+        bottom: -24px;
+        right: 50%;
+        width: 2px;
+        height: 48px;
+        background: linear-gradient(180deg, #6A5AE0, #2C2C2E);
+        transform: translateX(50%);
+      }
+    }
+
+    /* Spacing & Layout */
+.steps-section { padding: clamp(3rem, 8vw, 5rem) 0; }
+.steps-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1.5rem, 4vw, 2rem);
+  margin-bottom: clamp(2.5rem, 6vw, 3.5rem);
+}
+@media (min-width: 768px) { .steps-grid { grid-template-columns: repeat(3, 1fr); } }
+
+/* Card Styling */
+.step-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+  text-align: center;
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+}
+.step-card:active { transform: scale(0.98); }
+.step-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+
+/* Icon */
+.step-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px; height: 48px;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--accent) 15%, transparent);
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+.step-icon svg { stroke-width: 2px; }
+
+/* Typography */
+.step-title { font-size: 1.25rem; font-weight: 600; margin: 0 0 0.5rem; color: var(--text-primary); }
+.step-desc { font-size: 0.95rem; line-height: 1.6; margin: 0; color: var(--text-secondary); max-width: 90%; margin-inline: auto; }
+
+/* CTA */
+.cta-block { text-align: center; }
+.btn-primary {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 14px 32px; font-size: 1rem; font-weight: 500;
+  border-radius: 12px; background: var(--accent); color: #fff;
+  text-decoration: none; min-height: 44px; transition: filter 0.15s ease;
+}
+.btn-primary:hover { filter: brightness(1.15); }
+.cta-helper { font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.75rem; opacity: 0.8; }
+  </style>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -65,7 +162,7 @@
 
   <!-- Navigation -->
   <header class="fixed top-0 w-full z-50 bg-dark-bg/90 backdrop-blur-md border-b border-dark-border/50">
-    <nav class="max-w-[1200px] mx-auto px-6 h-16 flex items-center justify-between" aria-label="Main navigation">
+    <nav class="max-w-[1200px] mx-auto px-6 h-16 flex items-center justify-between" role="navigation" aria-label="Main navigation">
       <a href="#" class="text-2xl font-bold tracking-tight font-display" aria-label="fynni homepage">
         fynni<span class="text-primary">.</span>
       </a>
@@ -78,11 +175,11 @@
           <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
           100% Gratis
         </span>
-        <a href="https://wa.me/6285179846320?text=Halo%20fynni,%20saya%20ingin%20coba%20aplikasi%20personal%20finance." target="_blank" rel="noopener noreferrer" class="bg-primary hover:bg-primary-hover active:bg-primary-active text-white px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-150 min-h-[44px] flex items-center shadow-lg shadow-primary/20" onclick="trackEvent('nav_cta_click')">
+        <a href="https://drive.google.com/file/d/19uqzMLWnS2jKDcbJ98RBnaEfMGnhL9pm/view" target="_blank" rel="noopener noreferrer" class="bg-primary hover:bg-primary-hover active:bg-primary-active text-white px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-150 min-h-[44px] flex items-center shadow-lg shadow-primary/20" onclick="trackEvent('nav_cta_click')">
           Coba fynni
         </a>
       </div>
-      <button id="mobile-menu-btn" type="button" class="md:hidden p-2 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg hover:bg-dark-card transition-colors" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+      <button id="mobile-menu-btn" class="md:hidden p-2 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg hover:bg-dark-card transition-colors" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
       </button>
     </nav>
@@ -97,7 +194,7 @@
           100% Gratis
         </span>
       </div>
-      <a href="https://wa.me/6285179846320?text=Halo%20fynni" target="_blank" class="bg-primary text-white px-4 py-3 rounded-lg text-sm font-medium text-center min-h-[44px] flex items-center justify-center mt-2">Coba fynni</a>
+      <a href="https://drive.google.com/file/d/19uqzMLWnS2jKDcbJ98RBnaEfMGnhL9pm/view" target="_blank" class="bg-primary text-white px-4 py-3 rounded-lg text-sm font-medium text-center min-h-[44px] flex items-center justify-center mt-2">Coba fynni</a>
     </div>
   </header>
 
@@ -118,7 +215,7 @@
             Track pengeluaran instan. Insight ≤3 detik. Rekomendasi budget otomatis untuk gaya hidup metropolitan yang lebih jelas.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-            <a href="https://wa.me/6285179846320?text=Halo%20fynni,%20saya%20ingin%20coba%20aplikasi%20personal%20finance." target="_blank" class="bg-primary hover:bg-primary-hover active:bg-primary-active text-white px-8 py-3.5 rounded-lg font-medium transition-all duration-150 min-h-[48px] flex items-center justify-center gap-2 shadow-lg shadow-primary/25" onclick="trackEvent('hero_primary_click')">
+            <a href="https://drive.google.com/file/d/19uqzMLWnS2jKDcbJ98RBnaEfMGnhL9pm/view" target="_blank" class="bg-primary hover:bg-primary-hover active:bg-primary-active text-white px-8 py-3.5 rounded-lg font-medium transition-all duration-150 min-h-[48px] flex items-center justify-center gap-2 shadow-lg shadow-primary/25" onclick="trackEvent('hero_primary_click')">
               Coba fynni
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </a>
@@ -209,6 +306,47 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: Alur Keuangan 3 Langkah (Below Hero) -->
+    <section id="alur-keuangan" class="section steps-section">
+      <div class="container">
+        <header class="section-header">
+          <h2 class="section-title">Kelola Keuangan Tanpa Ribet</h2>
+          <p class="section-subtitle">Cukup 3 langkah sederhana. Aplikasi akan membantu sisanya.</p>
+        </header>
+
+        <div class="steps-grid" role="list">
+          <article class="step-card" role="listitem" aria-label="Langkah 1: Catat transaksi">
+            <div class="step-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>
+            </div>
+            <h3 class="step-title">Catat</h3>
+            <p class="step-desc">Rekam pemasukan & pengeluaran hanya dalam beberapa ketukan. Kategori otomatis, saldo langsung update.</p>
+          </article>
+
+          <article class="step-card" role="listitem" aria-label="Langkah 2: Atur budget">
+            <div class="step-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+            </div>
+            <h3 class="step-title">Atur</h3>
+            <p class="step-desc">Pasang batas budget bulanan. Dapatkan saran realistis berdasarkan kebiasaan belanjamu.</p>
+          </article>
+
+          <article class="step-card" role="listitem" aria-label="Langkah 3: Lunasi hutang">
+            <div class="step-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+            </div>
+            <h3 class="step-title">Lunasi</h3>
+            <p class="step-desc">Pantau utang & cicilan sampai tuntas. Jadwal bayar terkelola, pikiran jadi lebih ringan.</p>
+          </article>
+        </div>
+
+        <div class="cta-block">
+          <a href="https://drive.google.com/file/d/19uqzMLWnS2jKDcbJ98RBnaEfMGnhL9pm/view" class="btn btn-primary" role="button">Download Gratis</a>
+          <p class="cta-helper">Tersedia di Android & iOS • Tanpa iklan • Offline-first</p>
         </div>
       </div>
     </section>
@@ -380,7 +518,7 @@
           Dipercaya ribuan profesional
         </h2>
         
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 text-center max-w-[900px] mx-auto fade-up">
+        <!-- <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 text-center max-w-[900px] mx-auto fade-up">
           <div class="p-6">
             <div class="text-4xl md:text-5xl font-display font-bold text-primary mb-2 tracking-tight">500+</div>
             <div class="text-text-secondary">Beta Testers</div>
@@ -393,7 +531,7 @@
             <div class="text-4xl md:text-5xl font-display font-bold text-primary mb-2 tracking-tight">4.9</div>
             <div class="text-text-secondary">Rating Aplikasi</div>
           </div>
-        </div>
+        </div> -->
 
         <div class="grid md:grid-cols-2 gap-6 max-w-[900px] mx-auto fade-up" style="transition-delay: 0.1s;">
           <blockquote class="bg-dark-card p-6 rounded-xl border-l-4 border-primary shadow-sm">
@@ -500,8 +638,8 @@
           Mulai track, clear, dan tabung. Chat kami di WhatsApp untuk mulai.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="https://wa.me/6285179846320?text=Halo%20fynni,%20saya%20ingin%20coba%20aplikasi%20personal%20finance." target="_blank" class="bg-white text-primary font-semibold px-8 py-3.5 rounded-lg hover:bg-gray-100 active:bg-gray-200 transition-all duration-150 min-h-[48px] flex items-center justify-center shadow-lg" onclick="trackEvent('cta_primary_click')">
-            Coba fynni via WhatsApp
+          <a href="https://drive.google.com/file/d/19uqzMLWnS2jKDcbJ98RBnaEfMGnhL9pm/view" target="_blank" class="bg-white text-primary font-semibold px-8 py-3.5 rounded-lg hover:bg-gray-100 active:bg-gray-200 transition-all duration-150 min-h-[48px] flex items-center justify-center shadow-lg" onclick="trackEvent('cta_primary_click')">
+            Download fynni 
           </a>
           <a href="#benefits" class="bg-transparent border-2 border-white/30 text-white font-medium px-8 py-3.5 rounded-lg hover:border-white hover:bg-white/10 transition-all duration-150 min-h-[48px] flex items-center justify-center">
             Pelajari lebih lanjut
@@ -660,3 +798,4 @@
     }
   </script>
 </body>
+</html>
