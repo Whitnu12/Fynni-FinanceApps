@@ -23,6 +23,10 @@ module.exports = {
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
         display: ['Space Grotesk', 'monospace']
+      },
+      transitionDuration: {
+        '600': '600ms',
+        '1000': '1000ms'
       }
     }
   },
