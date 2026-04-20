@@ -20,33 +20,80 @@
   <meta property="og:locale" content="id_ID">
   <link rel="canonical" href="https://fynni.app">
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="fynni - Finance, simplified.">
-  <meta name="twitter:description" content="Ubah jadi tabungan. Track, clear, instant insight dalam 3 detik. 100% Gratis.">
-  <meta name="twitter:image" content="https://fynni.app/og-image.jpg">
-  
-  <!-- Favicon & PWA -->
-  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
-  <link rel="apple-touch-icon" href="/images/icon-192.png">
-  <link rel="manifest" href="/site.webmanifest">
-  
-  <!-- Preload Critical Resources -->
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" as="style">
-  <link rel="preload" href="/css/style.css" as="style">
-  
-  <!-- Security Headers (for GitHub Pages) -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com;">
-  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-  <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
-
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
   
-  <!-- Tailwind CSS (Production Build) -->
-  <link rel="stylesheet" href="/css/style.css">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            dark: { bg: '#0F0F12', card: '#1C1C1E', border: '#2C2C2E', input: '#2C2C2E' },
+            primary: { DEFAULT: '#6A5AE0', hover: '#7B6EE9', active: '#4B3DB2' },
+            text: { primary: '#FFFFFF', secondary: '#F2F2F7', muted: '#E5E5EA' }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Space Grotesk', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root { --focus-ring: 0 0 0 3px rgba(106, 90, 224, 0.25); }
+    body { background-color: #0F0F12; color: #FFFFFF; font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
+    :focus-visible { outline: none; box-shadow: var(--focus-ring); border-radius: 8px; }
+    .skip-link { position: absolute; top: -50px; left: 0; background: #6A5AE0; color: white; padding: 8px 16px; z-index: 100; transition: top 0.2s; }
+    .skip-link:focus { top: 0; }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } }
+    
+    .mockup-device { background: #121214; border: 1px solid #2C2C2E; border-radius: 28px; overflow: hidden; box-shadow: 0 24px 48px rgba(0,0,0,0.45); aspect-ratio: 9/16; max-height: 640px; position: relative; }
+    .mockup-notch { width: 90px; height: 20px; background: #1C1C1E; border-radius: 0 0 16px 16px; margin: 0 auto; position: relative; z-index: 10; }
+    .bar-fill { transition: width 1s cubic-bezier(0.4, 0, 0.2, 1); }
+    
+    #cookie-banner { transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s; }
+    .cookie-hidden { transform: translateY(100%); opacity: 0; pointer-events: none; }
+    
+    .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    
+    /* FAQ Accordion */
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), padding 0.35s cubic-bezier(0.16, 1, 0.3, 1); }
+    .faq-answer.open { max-height: 300px; }
+    .faq-chevron { transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+    .faq-chevron.rotated { transform: rotate(180deg); }
+    
+    /* Step Connector Line */
+    .step-connector { position: relative; }
+    .step-connector::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: -24px;
+      width: 48px;
+      height: 2px;
+      background: linear-gradient(90deg, #6A5AE0, #2C2C2E);
+    }
+    @media (max-width: 767px) {
+      .step-connector::after {
+        top: auto;
+        bottom: -24px;
+        right: 50%;
+        width: 2px;
+        height: 48px;
+        background: linear-gradient(180deg, #6A5AE0, #2C2C2E);
+        transform: translateX(50%);
+      }
+    }
+  </style>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -660,3 +707,4 @@
     }
   </script>
 </body>
+</html>
