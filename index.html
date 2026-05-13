@@ -12,6 +12,18 @@
   --p:#6A5AE0;--pd:#4B3DB2;--bg:#0F0F12;--s:#1C1C1E;--sv:#2C2C2E;
   --b:#2C2C2E;--ol:#424245;--ok:#69F0AE;--warn:#FFB74D;--err:#FF5252;--info:#64B5F6;
 }
+
+:root{--p:#6A5AE0;--pd:#4B3DB2;--bg:#0F0F12;--s:#1C1C1E;--sv:#2C2C2E;--ol:#424245;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:#fff;font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.tag{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--p);background:rgba(106,90,224,.12);border:1px solid rgba(106,90,224,.28);border-radius:100px;padding:5px 13px}
+.tcard{background:var(--s);border:1px solid var(--sv);border-radius:16px;padding:22px 24px;display:flex;flex-direction:column;gap:14px;break-inside:avoid;transition:border-color .2s}
+.tcard:hover{border-color:rgba(106,90,224,.3)}
+.stars{display:flex;gap:3px}
+.avatar{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0}
+.badge{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:600;padding:3px 9px;border-radius:100px;background:rgba(106,90,224,.1);border:1px solid rgba(106,90,224,.2);color:var(--p)}
+@media(max-width:900px){.masonry{columns:2!important}}
+@media(max-width:560px){.masonry{columns:1!important}}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:#fff;font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
@@ -53,14 +65,8 @@ input:focus{outline:none;border-color:rgba(106,90,224,.6)!important}
 <nav id="nav" style="position:fixed;top:0;left:0;right:0;z-index:50;transition:background .3s,border-color .3s;border-bottom:1px solid transparent">
   <div style="max-width:1100px;margin:0 auto;padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between">
     <div style="display:flex;align-items:center;gap:10px">
-      <svg width="28" height="22" viewBox="0 0 120 90" fill="none">
-        <path d="M10 25 C30 5,55 5,65 25 C75 45,100 55,110 35" stroke="url(#nl1)" stroke-width="14" stroke-linecap="round" fill="none"/>
-        <path d="M10 55 C30 35,55 35,65 55 C75 75,100 85,110 65" stroke="url(#nl2)" stroke-width="14" stroke-linecap="round" fill="none" opacity=".65"/>
-        <defs>
-          <linearGradient id="nl1" x1="10" y1="25" x2="110" y2="35" gradientUnits="userSpaceOnUse"><stop stop-color="#9B8BFF"/><stop offset="1" stop-color="#C060FF"/></linearGradient>
-          <linearGradient id="nl2" x1="10" y1="55" x2="110" y2="65" gradientUnits="userSpaceOnUse"><stop stop-color="#7B6BEF"/><stop offset="1" stop-color="#A040E0"/></linearGradient>
-        </defs>
-      </svg>
+      <img width="28" height="22" viewBox="0 0 120 90" fill="none" src="/img/Group 21.svg">
+    </img>
       <span style="font-weight:600;font-size:19px;letter-spacing:-.02em">fynni</span>
     </div>
     <div class="hide-sm" style="display:flex;align-items:center;gap:32px">
@@ -102,10 +108,10 @@ input:focus{outline:none;border-color:rgba(106,90,224,.6)!important}
       </p>
       <div class="fu d3" style="display:flex;gap:10px;flex-wrap:wrap">
         <a href="#download" class="btn-p">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.7 9.05 7.43c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.39-1.32 2.76-2.53 3.96zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
-          Download iOS
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 9.35801V1H8V9.29289L10.1464 7.14645L10.8536 7.85355L7.51386 11.1932L3.91086 7.8674L4.58914 7.1326L7 9.35801ZM2 13V7H1V14H14V7H13V13H2Z" fill="#FFFFF"/></svg>
+          Download Apps
         </a>
-        <a href="#download" class="btn-g">Get Android APK</a>
+        <a href="#download" class="btn-g">Get IOS (Soon) </a>
       </div>
       <p class="fu d4" style="margin-top:14px;font-size:12px;color:rgba(255,255,255,.28)">Free forever · Offline · No account</p>
     </div>
@@ -252,6 +258,44 @@ input:focus{outline:none;border-color:rgba(106,90,224,.6)!important}
   </div>
 </section>
 
+<!-- Testimonial Page-->
+
+<section id="testimonials" style="padding:96px 0;background:#0F0F12">
+  <div style="max-width:1100px;margin:0 auto;padding:0 24px">
+
+    <!-- Header -->
+    <div style="text-align:center;margin-bottom:56px">
+      <div class="tag" style="margin-bottom:16px">Dari Pengguna Nyata</div>
+      <h2 style="font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-.03em;line-height:1.1;margin-bottom:12px">
+        Mereka sudah pakai fynni.<br>
+        <span style="color:rgba(255,255,255,.28)">Ini kata mereka.</span>
+      </h2>
+      <p style="color:rgba(255,255,255,.5);font-size:15px;max-width:440px;margin:0 auto;line-height:1.6">
+        Lebih dari 2.000 pengguna aktif — freelancer, mahasiswa, hingga kepala keluarga.
+      </p>
+    </div>
+
+    <!-- Masonry grid -->
+    <div class="masonry" style="columns:3;gap:14px;column-gap:14px" id="testi-grid"></div>
+
+    <!-- Bottom stat bar -->
+    <div style="margin-top:52px;display:flex;justify-content:center;gap:0;flex-wrap:wrap">
+      <div style="display:flex;align-items:center;gap:32px;padding:18px 32px;background:#1C1C1E;border:1px solid #2C2C2E;border-radius:16px;flex-wrap:wrap;justify-content:center;gap:28px">
+        <div style="text-align:center">
+          <p style="font-family:'Space Grotesk',monospace;font-size:26px;font-weight:700;color:#fff">94%</p>
+          <p style="font-size:12px;color:rgba(255,255,255,.45);margin-top:2px">Rekomendasikan ke teman</p>
+        </div>
+        <div style="width:1px;height:36px;background:#2C2C2E"></div>
+        <div style="text-align:center">
+          <p style="font-family:'Space Grotesk',monospace;font-size:26px;font-weight:700;color:#fff">&lt;3s</p>
+          <p style="font-size:12px;color:rgba(255,255,255,.45);margin-top:2px">Rata-rata waktu buka app</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- FAQ -->
 <section id="faq" style="padding:96px 0">
   <div style="max-width:700px;margin:0 auto;padding:0 24px">
@@ -275,10 +319,10 @@ input:focus{outline:none;border-color:rgba(106,90,224,.6)!important}
     <p style="font-size:16px;color:rgba(255,255,255,.54);line-height:1.6;margin-bottom:40px;max-width:460px;margin-left:auto;margin-right:auto">Keuanganmu, langsung jelas. Download gratis — no account, no subscription.</p>
     <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:48px">
       <a href="#" class="btn-p" style="padding:14px 24px;font-size:14px">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.7 9.05 7.43c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.39-1.32 2.76-2.53 3.96zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
-        Download iOS
+        <svg width="30" height="30" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 9.35801V1H8V9.29289L10.1464 7.14645L10.8536 7.85355L7.51386 11.1932L3.91086 7.8674L4.58914 7.1326L7 9.35801ZM2 13V7H1V14H14V7H13V13H2Z" fill="#FFFFF"/></svg>
+        Download Apps
       </a>
-      <a href="#" class="btn-g" style="padding:14px 24px;font-size:14px">Get Android APK</a>
+      <a href="#" class="btn-g" style="padding:14px 24px;font-size:14px">Get IOS (Soon)</a>
     </div>
     <div id="waitlist" style="background:#0F0F12;border:1px solid #2C2C2E;border-radius:16px;padding:24px;max-width:420px;margin:0 auto">
       <p style="font-size:14px;font-weight:600;margin-bottom:4px">Join Web Version Waitlist</p>
@@ -299,14 +343,9 @@ input:focus{outline:none;border-color:rgba(106,90,224,.6)!important}
     <div class="footer-grid" style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px;margin-bottom:28px">
       <div>
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
-          <svg width="22" height="18" viewBox="0 0 120 90" fill="none">
-            <path d="M10 25 C30 5,55 5,65 25 C75 45,100 55,110 35" stroke="url(#fl1)" stroke-width="14" stroke-linecap="round" fill="none"/>
-            <path d="M10 55 C30 35,55 35,65 55 C75 75,100 85,110 65" stroke="url(#fl2)" stroke-width="14" stroke-linecap="round" fill="none" opacity=".65"/>
-            <defs>
-              <linearGradient id="fl1" x1="10" y1="25" x2="110" y2="35" gradientUnits="userSpaceOnUse"><stop stop-color="#9B8BFF"/><stop offset="1" stop-color="#C060FF"/></linearGradient>
-              <linearGradient id="fl2" x1="10" y1="55" x2="110" y2="65" gradientUnits="userSpaceOnUse"><stop stop-color="#7B6BEF"/><stop offset="1" stop-color="#A040E0"/></linearGradient>
-            </defs>
-          </svg>
+          <img width="22" height="18" viewBox="0 0 120 90" fill="none" src="/img/Group 21.svg">
+            
+          </img>
           <span style="font-weight:600;font-size:17px;letter-spacing:-.02em">fynni</span>
         </div>
         <p style="font-size:12px;color:rgba(255,255,255,.38);line-height:1.6;max-width:200px">Privacy-first personal finance. Speed × Simplicity × Ease of use.</p>
@@ -459,6 +498,112 @@ document.getElementById('email-form').addEventListener('submit',function(e){
 // Scroll reveal
 const ro=new IntersectionObserver(entries=>entries.forEach(en=>{if(en.isIntersecting)en.target.classList.add('visible')}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+
+//testimonial
+const testimonials = [
+  {
+    name: "Rizky Aditya",
+    role: "Desainer Freelance",
+    avatar: "RA",
+    avatarBg: "#6A5AE020",
+    avatarColor: "#9B8BFF",
+    stars: 5,
+    badge: "Freelancer",
+    text: "Dulu saya pakai spreadsheet Excel buat catat pemasukan dari klien. Ribetnya bukan main, apalagi kalau proyeknya banyak. Sejak pakai fynni, saya bisa lihat berapa yang sudah masuk dan berapa yang sudah keluar dalam hitungan detik. Yang paling saya suka adalah fitur multi-wallet-nya — saya pisahkan rekening operasional dan tabungan, semua kelihatan jelas."
+  },
+  {
+    name: "Sari Wulandari",
+    role: "Ibu Rumah Tangga, 2 anak",
+    avatar: "SW",
+    avatarBg: "#69F0AE18",
+    avatarColor: "#69F0AE",
+    stars: 5,
+    badge: "Keluarga",
+    text: "Suami saya yang awalnya rekomendasikan app ini. Sekarang malah saya yang lebih rajin pakainya. Tagihan listrik, air, cicilan — semua saya set recurring jadi nggak pernah lupa. Budget bulanan juga jadi lebih terkontrol. Bonus-nya, app ini jalan meskipun sinyal jelek, jadi saya tetap bisa catat belanja di pasar."
+  },
+  {
+    name: "Bima Nugroho",
+    role: "Mahasiswa Teknik, Semester 6",
+    avatar: "BN",
+    avatarBg: "#FFB74D18",
+    avatarColor: "#FFB74D",
+    stars: 5,
+    badge: "Mahasiswa",
+    text: "Uang kos dari orang tua sering habis sebelum akhir bulan dan saya nggak tahu kemana perginya. Tiga minggu pakai fynni, saya akhirnya sadar bahwa 40% pengeluaran saya ke kopi dan makan di luar. Sekarang saya set budget kategori per minggu. Nggak 100% disiplin, tapi jauh lebih aware dari sebelumnya.",
+  },
+  {
+    name: "Dian Fitriani",
+    role: "Staff Keuangan, Startup",
+    avatar: "DF",
+    avatarBg: "#64B5F618",
+    avatarColor: "#64B5F6",
+    stars: 5,
+    badge: "Professional",
+    text: "Yang langsung bikin saya percaya sama fynni adalah soal privasi. Data tidak ke mana-mana, disimpan lokal di HP saya sendiri. Buat saya yang kerja di bidang keuangan, ini penting banget. Saya cukup paranoid soal data sensitif. App ini juga nggak minta-minta akses yang nggak perlu saat install.",
+  },
+  {
+    name: "Hendro Prasetyo",
+    role: "Teknisi Lapangan",
+    avatar: "HP",
+    avatarBg: "#6A5AE020",
+    avatarColor: "#9B8BFF",
+    stars: 4,
+    badge: "Daily User",
+    text: "Saya kerja di lapangan, sering di area yang sinyalnya buruk atau bahkan tidak ada sama sekali. App keuangan lain selalu butuh internet untuk sync, jadi nggak berguna. fynni beda — tetap jalan offline. Saya catat pengeluaran BBM, makan siang, dan lembur di situ. Simpel dan tidak bikin bingung.",
+  },
+  {
+    name: "Mega Pratiwi",
+    role: "Content Creator",
+    avatar: "MP",
+    avatarBg: "#FF525218",
+    avatarColor: "#FF8A80",
+    stars: 5,
+    badge: "Creator",
+    text: "Income saya tidak tetap — kadang bulan ini besar, bulan depan sepi. fynni bantu saya visualisasi pola income selama beberapa bulan terakhir sehingga saya bisa lebih realistis dalam planning. Fitur laporan bulanannya cukup detail tapi tidak overwhelming. Tepat yang saya butuhkan.",
+  },
+  {
+    name: "Fajar Ramadhan",
+    role: "Driver Ojek Online",
+    avatar: "FR",
+    avatarBg: "#69F0AE18",
+    avatarColor: "#69F0AE",
+    stars: 5,
+    badge: "Daily User",
+    text: "Saya catat semua penghasilan harian dan pengeluaran bensin di sini. Dengan begitu saya tahu hari mana yang paling menguntungkan. Tampilannya tidak ribet, tidak perlu tutorial panjang. Langsung mengerti cara pakainya. Sudah rekomendasikan ke beberapa teman sesama driver.",
+  },
+  {
+    name: "Nurul Hidayah",
+    role: "Apoteker, bekerja di klinik swasta",
+    avatar: "NH",
+    avatarBg: "#FFB74D18",
+    avatarColor: "#FFB74D",
+    stars: 5,
+    badge: "Professional",
+    text: "Saya punya hutang KPR dan cicilan motor. fynni bantu saya track progress pelunasannya setiap bulan. Setiap kali bayar cicilan, langsung saya input — ada kepuasan tersendiri melihat angkanya berkurang. Sebelumnya saya hanya menebak-nebak sisa hutangnya berapa. Sekarang semua jelas.",
+  },
+];
+
+const colors = ['#9B8BFF','#69F0AE','#FFB74D','#64B5F6','#FF8A80'];
+function starsSVG(n){
+  return Array.from({length:5},(_,i)=>`<svg width="13" height="13" viewBox="0 0 24 24" fill="${i<n?'#FFB74D':'rgba(255,255,255,.15)'}"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`).join('');
+}
+
+document.getElementById('testi-grid').innerHTML = testimonials.map(t=>`
+  <div class="tcard" style="margin-bottom:14px">
+    <div class="stars">${starsSVG(t.stars)}</div>
+    <p style="font-size:14px;color:rgba(255,255,255,.78);line-height:1.7;font-style:italic">"${t.text}"</p>
+    <div style="display:flex;align-items:center;gap:10px;margin-top:4px;padding-top:14px;border-top:1px solid rgba(255,255,255,.06)">
+      <div class="avatar" style="background:${t.avatarBg};color:${t.avatarColor}">${t.avatar}</div>
+      <div style="flex:1">
+        <p style="font-size:13px;font-weight:600;color:#fff">${t.name}</p>
+        <p style="font-size:11px;color:rgba(255,255,255,.42);margin-top:1px">${t.role}</p>
+      </div>
+      <span class="badge">${t.badge}</span>
+    </div>
+  </div>
+`).join('');
+
+
 </script>
 </body>
 </html>
